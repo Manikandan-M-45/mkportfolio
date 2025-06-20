@@ -1,0 +1,28 @@
+.project-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensure no overflow is visible */
+}
+
+.project-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background-color: #fff;
+  opacity: 0; /* Initially hidden */
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  transition: transform 5s ease, opacity .5s ease; /* Shorter transition time */
+  display: flex; /* Center text */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+.project-card:hover .project-name {
+  /* transform: translateY(200px); */
+  opacity: 0.5; /*Fade in effect*/
+  display: flex; /* Ensure visibility when hovering */
+}

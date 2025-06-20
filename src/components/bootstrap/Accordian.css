@@ -1,0 +1,50 @@
+.accordion-button::after {
+  display: none; /* Hide the default caret icon */
+}
+
+.custom-accordion-button i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* .custom-accordion-button {
+  display: flex;
+  align-items: center;
+} */
+
+.custom-accordion-button.collapsed i {
+   transform: rotate(45deg); 
+   /* Rotate the icon if needed when collapsed */
+}
+
+/* .accordion-button {
+  padding: 0.75rem 1.25rem; /* Adjust padding as needed */
+/* } / */
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* Two-color gradient */
+  color: white;
+  border-radius: 10px; /* Optional, if you want rounded edges as well */
+  overflow: hidden;
+  /* Clip-path to create slanted corners effect */
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.card .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+}

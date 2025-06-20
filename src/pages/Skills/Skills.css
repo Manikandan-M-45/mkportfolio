@@ -1,0 +1,82 @@
+.icon {
+  transition: transform 1s linear;
+}
+.html{
+  color: #ea602b;
+  transform: rotateY(350deg);
+}
+.css{
+  color: #2960ec;
+  transform: rotateY(350deg);
+}
+.react{
+  color: #61dbfb;
+  transform: rotateY(350deg);
+}
+.js{
+  color: rgb(255, 251, 0);
+  transform: rotateY(350deg);
+}
+.node{
+  color: #3b8739;
+  transform: rotateY(350deg);
+}
+.express{
+  color: grey;
+  transform: rotateY(350deg);
+}
+.mongodb{
+  color: #00ed64;
+  transform: rotateY(350deg);
+} 
+.bootstrap{
+  color: #7531fa;
+  transform: rotateY(350deg);
+} 
+.tailwind{
+  color: #00bcff;
+}
+   .skills-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 10px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-align: center;
+    }
+   
+
+    .skills-scroll {
+      display: inline-block;
+      animation: scroll-left 15s linear infinite;
+    }
+    .skills-scroll2 {
+      display: inline-block;
+      animation: scroll-right 15s linear infinite;
+    }
+
+    .skill {
+      display: inline-block;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+      /* filter: brightness(0.5); */
+      padding: 10px 25px;
+    }
+
+     @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    } 
+     @keyframes scroll-right {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    } 
