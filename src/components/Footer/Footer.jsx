@@ -6,26 +6,27 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Footer.css";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+// import {}
 
 const Footer = () => {
   return (
     <footer>
       <div className="container-fluid text-center bg-dark text-white mb-1">
         <div className="pt-5">
-          <span className="fs-2 mx-2 linkedin">
+          <a target="_blank" href="https://www.linkedin.com/in/manikandan-m-33988a232/" className="fs-2 mx-2 linkedin">
             <FontAwesomeIcon icon={faLinkedin} />
-          </span>
-          <span className="fs-2 mx-2 github">
+          </a>
+          <a target="_blank" href="https://github.com/Manikandan-M-45" className="fs-2 mx-2 github">
             <FontAwesomeIcon icon={faGithub} />
-          </span>
-          <span className="fs-2 mx-2 whatsapp">
+          </a>
+          <a target="_blank" href="" className="fs-2 mx-2 whatsapp">
             <FontAwesomeIcon icon={faWhatsapp} />
-          </span>
+          </a>
         </div>
         <div className="pb-5">
-          <span className="fs-4">
+          <a target="_blank" href="" className="fs-4">
             Made by Mk45 with <FontAwesomeIcon icon={faHeart} />
-          </span>
+          </a>
         </div>
       </div>
     </footer>

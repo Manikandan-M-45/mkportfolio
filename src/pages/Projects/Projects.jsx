@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Projects.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,9 +9,23 @@ import idcard from "../../images/idcard.png";
 import weather from "../../images/weather.png";
 
 const Projects = () => {
+
+const [size, setSize] = useState(window.innerWidth);
+
+useEffect(() => {
+  const handleResize = () => {
+    setSize(window.innerWidth);
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+
+
   const settings = {
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: size > 480 ? 4 : 1,
+    slidesToScroll: size > 480 ? 4 : 1,
     infinite: true,
     dots: true,
     autoplay: true, // Optional: Auto scroll for better UX
@@ -82,81 +96,83 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container">
-      <h1>Projects</h1>
-      <Slider {...settings}>
-        {projects.map((project, index) => (
-          <div key={index} className="slides">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-            />
-            {/* Dynamic modal */}
-            <div
-              className="modal fade"
-              id={`projectModal${index}`}
-              tabIndex="-1"
-              aria-labelledby={`projectModalLabel${index}`}
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <h1>{project.title}</h1>
-                    <p>{project.description}</p>
+    <div className="container-fluid bg-dark text-white ">
+      <div className="container">
+        <h1>Projects</h1>
+        <Slider {...settings}>
+          {projects.map((project, index) => (
+            <div key={index} className="slides">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-image"
+              />
+              {/* Dynamic modal */}
+              <div
+                className="modal fade"
+                id={`projectModal${index}`}
+                tabIndex="-1"
+                aria-labelledby={`projectModalLabel${index}`}
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      <h1>{project.title}</h1>
+                      <p>{project.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <h4>Technologies used:</h4>
-            {project.technologies.map((tech, techIndex) => (
-              <span className="badge text-bg-secondary" key={techIndex}>
-                {tech}
-              </span>
-            ))}
-            <div className="project-details">
-              <span>Created: {project.created}</span>
-              <br />
-              <p
-                className="badge text-bg-info fs-6"
-                data-bs-toggle="modal"
-                data-bs-target={`#projectModal${index}`}
-              >
-                More...
-              </p>
-              <div className="project-links">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <h4>Technologies used:</h4>
+              {project.technologies.map((tech, techIndex) => (
+                <span className="badge text-bg-secondary" key={techIndex}>
+                  {tech}
+                </span>
+              ))}
+              <div className="project-details">
+                <span>Created: {project.created}</span>
+                <br />
+                <p
+                  className="badge text-bg-info fs-6"
+                  data-bs-toggle="modal"
+                  data-bs-target={`#projectModal${index}`}
                 >
-                  GitHub
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    pointerEvents: project.disabled ? "none" : "auto",
-                    color: project.disabled ? "gray" : "blue",
-                  }}
-                >
-                  {project.disabled ? "Live demo unavailable" : "Live Demo"}
-                </a>
+                  More...
+                </p>
+                <div className="project-links">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      pointerEvents: project.disabled ? "none" : "auto",
+                      color: project.disabled ? "gray" : "blue",
+                    }}
+                  >
+                    {project.disabled ? "Live demo unavailable" : "Live Demo"}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
+import Contact from "./components/contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import About from "./pages/About/About";
-import Education from "./pages/Education/Education";
+// import Education from "./pages/Education/Education";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Skill from "./pages/Skills/Skill";
@@ -13,8 +14,8 @@ function App() {
       <Home />
       <About />
       <Skill />
-      <Education />
       <Projects />
+      <Contact />
       <Footer />
     </div>
   );

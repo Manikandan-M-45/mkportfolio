@@ -1,0 +1,9 @@
+.contact{
+  width: 500px;
+}
+
+@media screen and (max-width: 480px) {
+  .contact{
+    width: 100%;
+  }
+}

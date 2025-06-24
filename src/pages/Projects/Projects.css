@@ -59,3 +59,9 @@ p {
 .modal-backdrop{
   width: fit-content !important;
 }
+
+@media screen and (max-width: 480px) {
+  .slides{
+    width: 100%;
+  }
+}
