@@ -9,26 +9,23 @@ import idcard from "../../images/idcard.png";
 import weather from "../../images/weather.png";
 
 const Projects = () => {
+  const [size, setSize] = useState(window.innerWidth);
 
-const [size, setSize] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth);
+    };
 
-useEffect(() => {
-  const handleResize = () => {
-    setSize(window.innerWidth);
-  };
-
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
-
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const settings = {
-    slidesToShow: size > 480 ? 4 : 1,
-    slidesToScroll: size > 480 ? 4 : 1,
+    slidesToShow: size > 480 ? 2 : 1,
+    slidesToScroll: size > 480 ? 1 : 1,
     infinite: true,
     dots: true,
-    autoplay: true, // Optional: Auto scroll for better UX
+    autoplay: false, // Optional: Auto scroll for better UX
     autoplaySpeed: 3000, // Speed in milliseconds
   };
 
@@ -107,52 +104,22 @@ useEffect(() => {
                 alt={project.title}
                 className="project-image"
               />
-              {/* Dynamic modal */}
-              <div
-                className="modal fade"
-                id={`projectModal${index}`}
-                tabIndex="-1"
-                aria-labelledby={`projectModalLabel${index}`}
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <h1>{project.title}</h1>
-                      <p>{project.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h4>Technologies used:</h4>
-              {project.technologies.map((tech, techIndex) => (
-                <span className="badge text-bg-secondary" key={techIndex}>
-                  {tech}
-                </span>
-              ))}
-              <div className="project-details">
-                <span>Created: {project.created}</span>
-                <br />
-                <p
-                  className="badge text-bg-info fs-6"
-                  data-bs-toggle="modal"
-                  data-bs-target={`#projectModal${index}`}
-                >
-                  More...
-                </p>
-                <div className="project-links">
+
+              <div className="project-detail text-white">
+                <h3 className="fw-bolder fs-5 text-white">{project.title}</h3>
+                <p className="fw-light fs-6">{project.description}</p>
+                {project.technologies.map((tech, techIndex) => (
+                  <span className="badge px-3 py-2 mx-2 text-bg-secondary" key={techIndex}>
+                    {tech}
+                  </span>
+                ))}
+
+                <div className="project-links mt-3">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="btn btn-lg btn-warning text-decoration-none text-white"
                   >
                     GitHub
                   </a>
@@ -160,6 +127,7 @@ useEffect(() => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="btn btn-lg btn-outline-info text-decoration-none text-white outline-3 "
                     style={{
                       pointerEvents: project.disabled ? "none" : "auto",
                       color: project.disabled ? "gray" : "blue",
@@ -167,6 +135,7 @@ useEffect(() => {
                   >
                     {project.disabled ? "Live demo unavailable" : "Live Demo"}
                   </a>
+                 
                 </div>
               </div>
             </div>
