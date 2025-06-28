@@ -24,8 +24,8 @@ const Projects = () => {
     slidesToShow: size > 480 ? 2 : 1,
     slidesToScroll: size > 480 ? 1 : 1,
     infinite: true,
-    dots: true,
-    autoplay: false, // Optional: Auto scroll for better UX
+    dots: false,
+    autoplay: true, // Optional: Auto scroll for better UX
     autoplaySpeed: 3000, // Speed in milliseconds
   };
 

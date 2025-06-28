@@ -7,8 +7,8 @@ const Contact = () => {
           <h3 className="display-4 fw-bold username letter-spacing">
             Contact Me
           </h3>
-        <div className="row">
-          <div className="col-5">
+        <div className="row justify-content-between">
+          <div className="col-6">
             <div>
               <div className="px-5 py-2 my-2 rounded bg-white d-flex align-items-center gap-3">
                 <div>
@@ -45,10 +45,10 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col-5">
+          <div className="col-6">
  <div className="mx-auto contact">
         
-          <div class="form-floating mb-3 mt-3">
+          <div class="form-floating mb-3 mt-2">
             <input
               type="text"
               class="form-control"
@@ -76,7 +76,7 @@ const Contact = () => {
               id="message"
               placeholder="Enter email"
               name="message"
-              style={{ height: "200px" }}
+              style={{ height: "220px" }}
             />
             <label for="message">Message</label>
           </div>

@@ -1,0 +1,54 @@
+.education{
+     order: 2;
+    background: #7ff508;
+    color: white !important;
+    filter: invert(1);
+    border-style: outset;
+    border-width: 4px;
+    border-color: #6eafd2;
+    margin-left: 4%;
+}
+.education::after{
+  position: relative;
+  width: 20px;
+  height: 50px;
+  background-color: #800af7;
+  top: 20px;
+  
+}
+.education-detail{
+  background-color: #800af7;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 44%;
+    padding: 20px;
+    border-radius: 27px;
+    border-style: groove;
+    border-width: 6px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.experience{
+     order: -2;
+    background: #7ff508;
+    color: white !important;
+    filter: invert(1);
+    border-style: outset;
+    border-width: 4px;
+    border-color: #6eafd2;
+    margin-right: 4%;
+}
+.experience-detail{
+  background-color: #800af7;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 44%;
+    padding: 20px;
+    border-radius: 27px;
+    border-style: groove;
+    border-width: 6px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+}
