@@ -16,7 +16,7 @@ import "./Skills.css";
 
 const Skill = () => {
   return (
-    <div className="container-fluid bg-dark text-white py-5">
+    <div className="container-fluid bg-dark text-white py-5" id="skill">
       <div className="container border-top border-5">
          <div className="text-center my-5 display-4 fw-bold username letter-spacing fst-italic">
             Skills I have

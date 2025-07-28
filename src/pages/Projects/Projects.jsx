@@ -93,17 +93,17 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container-fluid bg-dark text-white ">
+    <div className="container-fluid bg-dark text-white mt-0" id="projects">
       <div className="container">
         <h1>Projects</h1>
         <Slider {...settings}>
           {projects.map((project, index) => (
             <div key={index} className="slides">
-              <img
+              {/* <img
                 src={project.image}
                 alt={project.title}
                 className="project-image"
-              />
+              /> */}
 
               <div className="project-detail text-white">
                 <h3 className="fw-bolder fs-5 text-white">{project.title}</h3>

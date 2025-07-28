@@ -1,84 +1,102 @@
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.slick-slide {
-  padding: 10px;
+.container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #ffc107;
 }
 
 .slides {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: left;
-  padding: 15px;
+  padding: 20px;
+  background-color: #212529;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.7s linear;
 }
-
+.slides:hover{
+  transform: translateY(-20px);
+}
 .project-image {
   width: 100%;
-  height: 200px;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
-  object-position: top;
-  border-radius: 5px;
+  max-height: 200px;
+  margin-bottom: 15px;
+  border: 2px solid #444;
 }
 
-h3 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #333;
+.project-detail {
+  text-align: left;
 }
 
-p {
-  /* color: #666; */
-  font-size: 0.9rem;
-  margin: 10px 0;
-}
-
-.project-details {
+.project-detail h3 {
   margin-top: 10px;
-  font-size: 0.8rem;
-  color: #555;
+  margin-bottom: 10px;
+  color: #ffc107;
 }
 
-.project-links {
-  margin-top: 10px;
+.project-detail p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  margin-bottom: 10px;
 }
 
 .project-links a {
-  text-decoration: none;
   margin-right: 10px;
-  color: #007bff;
 }
 
-.project-links a:hover {
-  text-decoration: underline;
-}
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 2rem;
+  }
 
-.modal-backdrop {
-  width: fit-content !important;
-}
-.slides {
-  position: relative;
-  padding: 55px;
-}
-.project-detail {
-  display: none;
-  position: absolute;
- background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-}
-.slides:hover .project-detail{
-  display: block;
-}
-
-@media screen and (max-width: 480px) {
   .slides {
+    padding: 15px;
+  }
+
+  .project-image {
+    max-height: 180px;
+  }
+
+  .project-detail h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-detail p {
+    font-size: 0.9rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    margin: 3px;
+  }
+
+  .project-links .btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-links a {
+    margin: 5px 0;
     width: 100%;
   }
 }
+

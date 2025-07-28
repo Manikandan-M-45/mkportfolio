@@ -1,54 +1,112 @@
-.education{
-     order: 2;
-    background: #7ff508;
-    color: white !important;
-    filter: invert(1);
-    border-style: outset;
-    border-width: 4px;
-    border-color: #6eafd2;
-    margin-left: 4%;
+/* Base styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.education::after{
+
+.username {
+  color: #ffc107;
+  letter-spacing: 5px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 30%;
+  bottom: 30%;
+  left: 50%;
+  width: 3px;
+  background-color: #ffc107;
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0.7;
+  border-radius: 10px;
+  animation: growLine 1s ease-in-out forwards;
+}
+
+@keyframes growLine {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 60%;
+    opacity: 0.7;
+  }
+}
+
+
+/* Shared Card Style */
+.experience-detail,
+.education-detail {
+  background-color: #1f1f1f;
+  border-left: 5px solid #ffc107;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  width: 20px;
-  height: 50px;
-  background-color: #800af7;
-  top: 20px;
-  
+  z-index: 1;
 }
-.education-detail{
-  background-color: #800af7;
-    color: white;
-    font-weight: 600;
-    letter-spacing: 2px;
-    width: 44%;
-    padding: 20px;
-    border-radius: 27px;
-    border-style: groove;
-    border-width: 6px;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0;
+
+.experience-detail:hover,
+.education-detail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
 }
-.experience{
-     order: -2;
-    background: #7ff508;
-    color: white !important;
-    filter: invert(1);
-    border-style: outset;
-    border-width: 4px;
-    border-color: #6eafd2;
-    margin-right: 4%;
+
+.experience-detail h3,
+.education-detail h3 {
+  color: #ffc107;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
-.experience-detail{
-  background-color: #800af7;
-    color: white;
-    font-weight: 600;
-    letter-spacing: 2px;
-    width: 44%;
-    padding: 20px;
-    border-radius: 27px;
-    border-style: groove;
-    border-width: 6px;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
+
+.experience-detail p,
+.education-detail p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+/* Timeline icons (SVG wrappers) */
+.experience,
+.education {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc107;
+  padding: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.experience:hover,
+.education:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .timeline-line {
+    display: none;
+  }
+
+  .experience-detail,
+  .education-detail {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .experience,
+  .education {
+    margin: 0 auto 20px auto;
+  }
+
+  .username {
+    font-size: 2rem;
+  }
 }
