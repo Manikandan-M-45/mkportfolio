@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import profile from "../../images/profile.png";
+import profile from "../../images/profile2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,9 +10,9 @@ const Home = () => {
       <div className="container p-5 mt-5">
         <div className="row mt-5">
           <div className="col-12 col-md-7 col-lg-7">
-            <h2 className="display-5 fw-bold">
+            <h2 className="display-5 fw-bold" >
               Hello, I'm{" "}
-              <span className="username display-1 fw-bold">MANIKANDAN 👋</span>
+              <span className="username display-1 fw-bold  gradient-text">MANIKANDAN </span><span className="d-inline-block">👋</span>
             </h2>
             <h3 className="mt-4">
               <span className="role">Full stack Developer 💻</span>
@@ -24,15 +24,16 @@ const Home = () => {
 
             <div className="mt-5 d-flex">
               <button class="button-85">Got a project?</button>
-              <button class="button-85 mx-5">
-                My Resume <FontAwesomeIcon icon={faCircleArrowDown} />
+            
+              <button class="button-85 mx-5">  <a className="text-decoration-none text-white" href="/FSD-RES.pdf" download target="_blank" rel="noopener noreferrer">
+                My Resume <FontAwesomeIcon icon={faCircleArrowDown} /></a>
               </button>
             </div>
           </div>
           <div className="col-12 col-md-5 col-lg-5 text-center mt-5">
-            <div className="profile">
-              <img src={profile} alt="user-profile" />
-              <div className="circle"></div>
+            <div className="profile" style={{height: "500px"}}>
+              <img src={profile} alt="user-profile" className="img-fluid rounded-5" style={{height: "100%"}} />
+              {/* <div className="circle"></div> */}
             </div>
           </div>
         </div>

@@ -4,9 +4,9 @@ import about from "../../images/about.png";
 
 const About = () => {
   return (
-    <div className="container-fluid bg-dark text-white " id="about">
+    <div className="container-fluid bg-dark text-white " id="about"  >
       <div className="container border-top border-5 px-5 py-4">
-        <div className="d-flex flex-column flex-lg-row flex-column-reverse flex-lg-row align-items-center">
+        <div  className="d-flex flex-column flex-lg-row flex-column-reverse flex-lg-row align-items-center">
           <div>
             <img src={about} alt="" style={{ width: "100%" }} />
           </div>

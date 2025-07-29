@@ -23,7 +23,7 @@ const Footer = () => {
               <a target="_blank" href="https://github.com/Manikandan-M-45" className="footer-icon github">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-              <a target="_blank" href="https://wa.me/919876543210" className="footer-icon whatsapp">
+              <a target="_blank" href="https://wa.me/9361540758" className="footer-icon whatsapp">
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
             </div>
